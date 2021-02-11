@@ -43,13 +43,61 @@ public class Main {
                     sc.next();
                 }
             }
+            System.out.println("Enter the type of item (1 for Raw,2 for Manufactured and 3 for Imported )");
+            int typeNo = 0;
+            boolean tCheck = true;
+            while (tCheck) {
+                try {
+                    typeNo = sc.nextInt();
+                    tCheck = checkNo(typeNo);
+                } catch (InputMismatchException e) {
+                    System.out.println("Entered type is not available again input enter the type of item (1 for Raw,2 for Manufactured and 3 for Imported ) ");
+                    sc.next();
+                }
+            }
+            String type = checkType(typeNo);
             sc.nextLine();
-            System.out.println("Enter the type of item (Raw, Manufactured and Imported )");
-            String type = sc.nextLine();
             itemDetails.add(new ItemDetail(name,price,quantity,type));
             System.out.println("Do you want to enter details of any other item (y/n):");
-            check = sc.nextLine();
+            boolean aCheck = true;
+            while (aCheck) {
+                try {
+                    check=sc.nextLine();
+                    aCheck = checkNo(check);
+                } catch (InputMismatchException e) {
+                    System.out.println("Entered type is not available again input enter for Do you want to enter details of any other item (y/n): ");
+                    sc.next();
+                }
+            }
+        }
+        for (ItemDetail i: itemDetails ){
+            System.out.println(i);
         }
     }
-}
+    public static boolean checkNo(String check){
+        if(check.equals("y") || check.equals("n")){
+            return false;
+        }
+        System.out.println("Entered type is not available again input for Do you want to enter details of any other item (y/n):  ");
+        return true;
+    }
+    public static boolean checkNo(int typeNo){
+        if(typeNo>=1 && typeNo<=3){
+            return false;
+        }
+        System.out.println("Entered type is not available again input enter the type of item (1 for Raw,2 for Manufactured and 3 for Imported ) ");
+        return true;
+    }
+    public static String checkType(int typeNo){
+        if(typeNo==1){
+            return "Raw";
+        }
+        else if(typeNo==2){
+            return "Manufactured";
+        }
+        else{
+            return "Imported";
+        }
+    }
 
+}

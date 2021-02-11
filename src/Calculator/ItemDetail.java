@@ -62,9 +62,9 @@ public class ItemDetail {
     public float calculateTax() {
         float rawTax = (float) ((this.itemPrice * 12.5) + this.itemPrice);
         float manufactureTax = rawTax + 2 * (this.itemPrice + rawTax);
-        if (this.itemType == "Raw") {
+        if (this.itemType.equals("Raw")) {
             return rawTax * this.itemQuantity;
-        } else if (this.itemType == "Manufacture") {
+        } else if (this.itemType.equals("Manufactured")) {
             return manufactureTax * this.itemQuantity;
         } else {
             float tax1 = 10 * this.itemPrice + manufactureTax;
@@ -83,5 +83,6 @@ public class ItemDetail {
         String result = "Item name:- " + this.itemName + ", Item price :- " + this.calculateTax() + ", Item type :- " + this.itemType + "\n";
         return result;
     }
+
 }
 

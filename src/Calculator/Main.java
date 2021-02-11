@@ -46,13 +46,10 @@ public class Main {
             sc.nextLine();
             System.out.println("Enter the type of item (Raw, Manufactured and Imported )");
             String type = sc.nextLine();
-            //itemDetails.add(new ItemDetail(name,price,quantity,type));
-
+            itemDetails.add(new ItemDetail(name,price,quantity,type));
             System.out.println("Do you want to enter details of any other item (y/n):");
             check = sc.nextLine();
         }
     }
-
-    
 }
 

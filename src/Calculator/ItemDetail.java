@@ -80,6 +80,11 @@ public class ItemDetail {
             }
         }
     }
+    @Override
+    public String toString() {
+        String result="Item name:- "+this.itemName+", Item price :- "+this.calulateTax()+", Item type :- "+this.itemType+"\n";
+        return result;
+    }
 
 
 }

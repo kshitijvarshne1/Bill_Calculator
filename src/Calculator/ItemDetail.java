@@ -58,34 +58,30 @@ public class ItemDetail {
     public void setItemType(String itemType) {
         this.itemType = itemType;
     }
-    public float calulateTax(){
-        float rawTax= (float) ((this.itemPrice*12.5)+this.itemPrice);
-        float manufactureTax = rawTax+2*(this.itemPrice+rawTax);
-        if(this.itemType=="Raw"){
-            return rawTax*this.itemQuantity;
-        }
-        else if(this.itemType=="Manufacture"){
-            return manufactureTax*this.itemQuantity;
-        }
-        else{
-            float tax1=10*this.itemPrice+manufactureTax;
-            if(tax1<=100){
-                return (tax1+5)*this.itemQuantity;
-            }
-            else if(tax1<=200){
-                return (tax1+10)*this.itemQuantity;
-            }
-            else{
-                return (tax1+(5*tax1))*this.itemQuantity;
+
+    public float calulateTax() {
+        float rawTax = (float) ((this.itemPrice * 12.5) + this.itemPrice);
+        float manufactureTax = rawTax + 2 * (this.itemPrice + rawTax);
+        if (this.itemType == "Raw") {
+            return rawTax * this.itemQuantity;
+        } else if (this.itemType == "Manufacture") {
+            return manufactureTax * this.itemQuantity;
+        } else {
+            float tax1 = 10 * this.itemPrice + manufactureTax;
+            if (tax1 <= 100) {
+                return (tax1 + 5) * this.itemQuantity;
+            } else if (tax1 <= 200) {
+                return (tax1 + 10) * this.itemQuantity;
+            } else {
+                return (tax1 + (5 * tax1)) * this.itemQuantity;
             }
         }
     }
+
     @Override
     public String toString() {
-        String result="Item name:- "+this.itemName+", Item price :- "+this.calulateTax()+", Item type :- "+this.itemType+"\n";
+        String result = "Item name:- " + this.itemName + ", Item price :- " + this.calulateTax() + ", Item type :- " + this.itemType + "\n";
         return result;
     }
-
-
 }
 

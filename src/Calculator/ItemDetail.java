@@ -80,9 +80,8 @@ public class ItemDetail {
 
     @Override
     public String toString() {
-        String result = "Item name:- " + this.itemName + ", Item price :- " + this.calculateTax() + ", Item type :- " + this.itemType + "\n";
+        String result = "Item name:- " + this.itemName + ", Item price :- " + this.calculateTax() + ", Item type :- " + this.itemType;
         return result;
     }
-
 }
 

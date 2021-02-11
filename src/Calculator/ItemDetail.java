@@ -59,7 +59,7 @@ public class ItemDetail {
         this.itemType = itemType;
     }
 
-    public float calulateTax() {
+    public float calculateTax() {
         float rawTax = (float) ((this.itemPrice * 12.5) + this.itemPrice);
         float manufactureTax = rawTax + 2 * (this.itemPrice + rawTax);
         if (this.itemType == "Raw") {
@@ -80,7 +80,7 @@ public class ItemDetail {
 
     @Override
     public String toString() {
-        String result = "Item name:- " + this.itemName + ", Item price :- " + this.calulateTax() + ", Item type :- " + this.itemType + "\n";
+        String result = "Item name:- " + this.itemName + ", Item price :- " + this.calculateTax() + ", Item type :- " + this.itemType + "\n";
         return result;
     }
 }

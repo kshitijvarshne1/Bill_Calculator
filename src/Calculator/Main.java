@@ -27,7 +27,7 @@ public class Main {
                     price = sc.nextInt();
                     pCheck = false;
                 } catch (InputMismatchException e) {
-                    System.out.println("Entered price is wrong please again input the price");
+                    System.out.println("Entered price is wrong please again input the price ");
                     sc.next();
                 }
             }

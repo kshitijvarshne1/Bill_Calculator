@@ -8,5 +8,10 @@
 package Calculator;
 
 public class ItemDetail {
+    private String itemName;
+    private int itemPrice;
+    private int itemQuantity;
+    private String itemType;
+
 }
 
